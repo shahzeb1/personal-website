@@ -1,27 +1,46 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        redesign
-      </h1>
-      <h2 class="subtitle">
-        My personal website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+  <div class="bg-black text-white w-screen h-screen p-5">
+    <heading>
+      <h2>hello</h2>
+      <h1>i'm shahzeb</h1>
+    </heading>
+    <content>
+      <h3>projects</h3>
+      <div class="flex flex-row justify-between my-3">
+        <div class="p-3 bg-white rounded-lg text-black">
+          <div>Some project title</div>
+          <div>
+            <a href="#">Git repo</a>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+        <div class="p-3 bg-white rounded-lg text-black">
+          <div>Some project title</div>
+          <div>
+            <a href="#">Git repo</a>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+        <div class="p-3 bg-white rounded-lg text-black">
+          <div>Some project title</div>
+          <div>
+            <a href="#">Git repo</a>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+        <div class="p-3 bg-white rounded-lg text-black">
+          <div>Some project title</div>
+          <div>
+            <a href="#">Git repo</a>
+            <a href="#">Read more</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+      <h3>writing</h3>
+      <h3>open source</h3>
+      <h3>get in touch</h3>
+    </content>
+  </div>
 </template>
 
 <script>
@@ -40,34 +59,13 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+h3 {
+  @apply font-sans text-white font-normal text-2xl;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+h2 {
+  @apply font-sans text-white font-normal text-3xl;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+h1 {
+  @apply font-sans text-white text-5xl font-normal;
 }
 </style>
