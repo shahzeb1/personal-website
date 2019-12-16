@@ -7,7 +7,7 @@
             <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
               &#128075;,
             </li>
-            <li @mouseover="hoverNav('cs projects')" @mouseleave="hoverOfNav">
+            <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">
               👨‍💻
             </li>
             <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">
@@ -28,31 +28,66 @@
         and swimmer.
       </h1>
     </heading>
-    <content>
-      <h1>some of my <span class="underline">projects</span></h1>
-      <div class="item-desc">
-        These are a few of the projects I've done that are worth noting.
+    <div class="content">
+      <div class="section">
+        <div class="item-desc">
+          <h2>
+            My <span class="text-white">technical projects</span>
+            span many disciplines such as machine learning, IoT,
+            web-development, messenger bots, and even game development.
+          </h2>
+        </div>
+        <div class="flex flex-row justify-between my-3">
+          <Item />
+          <Item />
+          <Item />
+        </div>
       </div>
-      <div class="flex flex-row justify-between my-3">
-        <Item />
-        <Item />
-        <Item />
+
+      <div class="section">
+        <div class="item-desc">
+          <h2>
+            I <span class="text-white">enjoy writing</span> about both computer
+            science subjects and about general things going on in my life.
+          </h2>
+        </div>
+        <div class="flex flex-row justify-between my-3">
+          <Item />
+          <Item />
+          <Item />
+        </div>
       </div>
-      <h3>writing</h3>
-      <div class="flex flex-row justify-between my-3">
-        <Item />
-        <Item />
-        <Item />
+
+      <div class="section">
+        <div class="item-desc">
+          <h2>
+            To me, <span class="text-white">photography</span> is the ultimate
+            creative outlet. Nature is my favorite photography subject.
+          </h2>
+        </div>
+        <div class="flex flex-row justify-between my-3">
+          <Item />
+          <Item />
+          <Item />
+        </div>
       </div>
-      <h3>open source</h3>
-      <div class="flex flex-row justify-between my-3">
-        <Item />
-        <Item />
-        <Item />
+
+      <div class="section">
+        <div class="item-desc">
+          <h2>
+            I <span class="text-white">am a graduate</span> from University in
+            California, Davis of Computer Science (B.S.).
+          </h2>
+        </div>
       </div>
-      <h3>photography</h3>
-      <h3>get in touch</h3>
-    </content>
+
+      <div class="footer">
+        <div class="buttons">
+          <button>My Resume</button>
+          <button>My Email</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -66,7 +101,8 @@ export default {
   data: function() {
     return {
       state: {
-        navHoverText: 'psst... this is a <nav-bar>'
+        navHoverText: 'psst... this is a navigation',
+        navHoverDefaultText: 'psst... this is a <navitation>'
       }
     }
   },
@@ -75,18 +111,13 @@ export default {
       this.state.navHoverText = text
     },
     hoverOfNav: function() {
-      this.state.navHoverText = 'psst... this is a <nav-bar>'
+      this.state.navHoverText = this.state.navHoverDefaultText
     }
   }
 }
 </script>
 
 <style lang="scss">
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
 h3 {
   @apply font-sans text-white font-normal text-2xl;
 }
@@ -106,9 +137,9 @@ nav {
       cursor: pointer;
 
       li {
-        @apply mr-3;
+        @apply pr-3;
         &:last-child {
-          @apply mr-0;
+          @apply pr-0;
         }
       }
     }
@@ -119,7 +150,7 @@ nav {
     height: fit-content;
 
     .text {
-      @apply text-base bg-gray-400 text-gray-800 px-2 py-2 mt-1 rounded;
+      @apply text-base bg-gray-400 text-gray-800 px-2 py-2 mt-1 rounded italic;
     }
 
     .arrow {
@@ -133,7 +164,27 @@ nav {
     }
   }
 }
-content {
-  @apply bg-yellow-300 mt-6;
+.content {
+  @apply mt-6;
+
+  .section {
+    @apply mb-4 w-3/4 py-2;
+
+    .item-desc {
+      @apply w-3/4 mb-6;
+
+      h2 {
+        @apply mr-2  text-gray-500;
+      }
+    }
+  }
+}
+
+.footer {
+  @apply mb-6;
+
+  button {
+    @apply bg-orange-500 rounded p-2 mr-2;
+  }
 }
 </style>
