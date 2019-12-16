@@ -7,7 +7,7 @@
     <content>
       <h3>projects</h3>
       <div class="flex flex-row justify-between my-3">
-        <div class="p-3 bg-white rounded-lg text-black">
+        <div class="p-3 rounded-lg text-black">
           <div>Some project title</div>
           <div>
             <a href="#">Git repo</a>
