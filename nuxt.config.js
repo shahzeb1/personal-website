@@ -1,5 +1,6 @@
-import pkg from './package'
-const path = require('path')
+import pkg from './package';
+const path = require('path');
+const config = require('./.contentful.json');
 
 export default {
   mode: 'universal',
@@ -24,6 +25,14 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
+
+  /**
+   * For contentful
+   */
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN
+  },
 
   /*
    ** Global CSS
@@ -56,4 +65,4 @@ export default {
     },
     extend(config, ctx) {}
   }
-}
+};

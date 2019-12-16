@@ -1,13 +1,21 @@
 <template>
   <div class="bg-gray-900 text-white m-h-screen p-5">
-    <heading>
+    <div class="heading">
       <nav>
         <div class="emojii">
           <ul>
-            <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">&#128075;,</li>
-            <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">👨‍💻</li>
-            <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">&#128247;</li>
-            <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">&#127946;</li>
+            <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
+              &#128075;,
+            </li>
+            <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">
+              👨‍💻
+            </li>
+            <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">
+              &#128247;
+            </li>
+            <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">
+              &#127946;
+            </li>
           </ul>
         </div>
         <div class="psst">
@@ -19,7 +27,7 @@
         hello. my name is shahzeb and i am a computer scientist, photographer,
         and swimmer.
       </h1>
-    </heading>
+    </div>
     <div class="content">
       <div class="section">
         <div class="item-desc">
@@ -31,9 +39,13 @@
           </h2>
         </div>
         <div class="flex flex-row justify-between my-3">
-          <Item />
-          <Item />
-          <Item />
+          <Item
+            v-for="(item, index) in projects"
+            :key="index"
+            :title="item.title"
+            :subTitle="item.subTitle"
+            :homeLinks="item.homeLinks"
+          />
         </div>
       </div>
 
@@ -56,8 +68,8 @@
         <div class="item-desc">
           <h2>
             To me,
-            <span class="text-white">photography</span> is the ultimate
-            creative outlet. Nature is my favorite photography subject.
+            <span class="text-white">photography</span> is the ultimate creative
+            outlet. Nature is my favorite photography subject.
           </h2>
         </div>
         <div class="flex flex-row justify-between my-3">
@@ -88,11 +100,31 @@
 </template>
 
 <script>
-import Item from '~/components/Item.vue'
+import Item from '~/components/Item.vue';
+import { createClient } from '~/plugins/contentful.js';
+
+const client = createClient();
 
 export default {
   components: {
     Item
+  },
+  asyncData() {
+    return client
+      .getEntries({ content_type: 'items' })
+      .then(({ items }) => {
+        const projects = [];
+        const writings = [];
+        items.map(({ fields }) => {
+          if (fields.section === 'project') projects.push(fields);
+          if (fields.section === 'writing') writings.push(fields);
+        });
+        return {
+          projects,
+          writings
+        };
+      })
+      .catch(e => console.error(e));
   },
   data: function() {
     return {
@@ -100,17 +132,22 @@ export default {
         navHoverText: 'psst... this is a navigation',
         navHoverDefaultText: 'psst... this is a <navitation>'
       }
-    }
+    };
+  },
+  head() {
+    return {
+      title: 'shahzeb.co | home'
+    };
   },
   methods: {
     hoverNav: function(text) {
-      this.state.navHoverText = text
+      this.state.navHoverText = text;
     },
     hoverOfNav: function() {
-      this.state.navHoverText = this.state.navHoverDefaultText
+      this.state.navHoverText = this.state.navHoverDefaultText;
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

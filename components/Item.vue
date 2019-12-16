@@ -1,12 +1,24 @@
 <template>
   <div class="proj-item">
-    <div class="title">Some project title</div>
-    <div class="desc">Some description of the project goes here</div>
+    <div class="title">{{ title }}</div>
+    <div class="desc">{{ subTitle }}</div>
     <div class="links">
-      <a href="#">Read more</a> or <a href="#">view git</a>.
+      <a :href="item.link" v-for="(item, index) in homeLinks" :key="index">{{
+        item.title
+      }}</a>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: String,
+    subTitle: String,
+    homeLinks: Array
+  }
+};
+</script>
 
 <style lang="scss">
 .proj-item {
