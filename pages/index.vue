@@ -1,21 +1,13 @@
 <template>
-  <div class="bg-gray-900 text-white w-screen m-h-screen p-5">
+  <div class="bg-gray-900 text-white m-h-screen p-5">
     <heading>
       <nav>
         <div class="emojii">
           <ul>
-            <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
-              &#128075;,
-            </li>
-            <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">
-              👨‍💻
-            </li>
-            <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">
-              &#128247;
-            </li>
-            <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">
-              &#127946;
-            </li>
+            <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">&#128075;,</li>
+            <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">👨‍💻</li>
+            <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">&#128247;</li>
+            <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">&#127946;</li>
           </ul>
         </div>
         <div class="psst">
@@ -32,7 +24,8 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            My <span class="text-white">technical projects</span>
+            My
+            <span class="text-white">technical projects</span>
             span many disciplines such as machine learning, IoT,
             web-development, messenger bots, and even game development.
           </h2>
@@ -47,7 +40,8 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I <span class="text-white">enjoy writing</span> about both computer
+            I
+            <span class="text-white">enjoy writing</span> about both computer
             science subjects and about general things going on in my life.
           </h2>
         </div>
@@ -61,7 +55,8 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            To me, <span class="text-white">photography</span> is the ultimate
+            To me,
+            <span class="text-white">photography</span> is the ultimate
             creative outlet. Nature is my favorite photography subject.
           </h2>
         </div>
@@ -75,7 +70,8 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I <span class="text-white">am a graduate</span> from University in
+            I
+            <span class="text-white">am a graduate</span> from University in
             California, Davis of Computer Science (B.S.).
           </h2>
         </div>
