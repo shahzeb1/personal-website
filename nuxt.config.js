@@ -2,6 +2,9 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
+  "generate": {
+    "dir": "public"
+  },
 
   /*
   ** Headers of the page
