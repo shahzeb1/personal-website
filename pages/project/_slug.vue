@@ -4,25 +4,26 @@
       <Links />
     </div>
     <div class="content px-12 flex flex-row justify-between">
-      <div class="left pb-12">
+      <div class="left pb-12 w-3/4">
         <h1>{{ post.fields.title }}</h1>
         <div class="py-6 flex justify-center">
-          <img
-            :src="`${post.fields.coverPhoto.fields.file.url}?w=500`"
-            alt="Placeholder"
-          />
+          <img :src="`${post.fields.coverPhoto.fields.file.url}?w=500`" alt="Placeholder" />
         </div>
-        <h2>
-          {{ post.fields.subTitle }}
-        </h2>
+        <h2>{{ post.fields.subTitle }}</h2>
         <vue-markdown>{{ post.fields.body }}</vue-markdown>
       </div>
-      <div class="right pt-16">
+      <div class="right pt-16 w-1/1">
         <div class="pb-10">
           <h3>Tech used</h3>
           <h2>GraphQL, HTML, CSS, React.</h2>
         </div>
-        <button>Learn more</button>
+        <a
+          :href="item.link"
+          v-for="(item, index) in post.fields.homeLinks"
+          :key="index"
+          class="button"
+          target="_blank"
+        >{{ item.title }}</a>
       </div>
     </div>
   </div>
@@ -43,7 +44,6 @@ export default {
     return client
       .getEntries({ content_type: 'items', 'fields.slug': params.slug })
       .then(entries => {
-        console.log(entries.items[0].fields);
         return {
           post: entries.items[0]
         };
@@ -76,7 +76,7 @@ img {
 }
 
 .content {
-  button {
+  .button {
     @apply bg-orange-500 rounded p-2 mr-2;
   }
 }

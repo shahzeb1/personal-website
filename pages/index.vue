@@ -24,6 +24,7 @@
             :title="item.title"
             :subTitle="item.subTitle"
             :homeLinks="item.homeLinks"
+            :slug="item.slug"
           />
         </div>
       </div>
@@ -36,42 +37,24 @@
             science subjects and about general things going on in my life.
           </h2>
         </div>
-        <div class="flex flex-row justify-between my-3">
-          <Item />
-          <Item />
-          <Item />
-        </div>
+        <div class="flex flex-row justify-between my-3"></div>
       </div>
 
       <div class="section">
         <div class="item-desc">
           <h2>
-            To me,
-            <span class="text-white">photography</span> is the ultimate creative
-            outlet. Nature is my favorite photography subject.
-          </h2>
-        </div>
-        <div class="flex flex-row justify-between my-3">
-          <Item />
-          <Item />
-          <Item />
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="item-desc">
-          <h2>
-            I
-            <span class="text-white">am a graduate</span> from University in
-            California, Davis of Computer Science (B.S.).
+            I have a computer science degree from University of California,
+            Davis (B.S.).
           </h2>
         </div>
       </div>
 
       <div class="footer">
         <div class="buttons">
-          <button>My Resume</button>
-          <button>My Email</button>
+          <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
+          <a href="https://github.com/shahzeb1" class="button" target="_blank"
+            >GitHub</a
+          >
         </div>
       </div>
     </div>
@@ -145,7 +128,7 @@ h1 {
 .footer {
   @apply mb-6;
 
-  button {
+  .button {
     @apply bg-orange-500 rounded p-2 mr-2;
   }
 }

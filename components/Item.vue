@@ -3,9 +3,7 @@
     <div class="title">{{ title }}</div>
     <div class="desc">{{ subTitle }}</div>
     <div class="links">
-      <span v-if="homeLinks">
-        <nuxt-link :to="homeLinks[0].link">{{homeLinks[0].title}}</nuxt-link>
-      </span>
+      <nuxt-link :to="`/project/${slug}`">View &#x2192;</nuxt-link>
     </div>
   </div>
 </template>
@@ -15,6 +13,7 @@ export default {
   props: {
     title: String,
     subTitle: String,
+    slug: String,
     homeLinks: Array
   }
 };
