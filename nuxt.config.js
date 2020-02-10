@@ -1,6 +1,10 @@
 import pkg from './package';
 const path = require('path');
-const config = require('./.contentful.json');
+// Contentful keys
+const config = {
+  CTF_SPACE_ID: 'pvrwn9m8u5jj',
+  CTF_CDA_ACCESS_TOKEN: '6evHqAnYnu1EzbV_FTWeRKdJNF3HhY5swWw0pX7OwGc'
+};
 
 export default {
   mode: 'universal',
