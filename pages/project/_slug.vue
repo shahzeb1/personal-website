@@ -7,15 +7,17 @@
       <div class="left pb-12 w-3/4">
         <h1>{{ post.fields.title }}</h1>
         <div class="py-6 flex justify-center">
-          <img :src="`${post.fields.coverPhoto.fields.file.url}?w=500`" alt="Placeholder" />
+          <img :src="`${post.fields.coverPhoto.fields.file.url}`" alt="Placeholder" />
         </div>
         <h2>{{ post.fields.subTitle }}</h2>
-        <vue-markdown>{{ post.fields.body }}</vue-markdown>
+        <div class="body-content">
+          <vue-markdown>{{ post.fields.body }}</vue-markdown>
+        </div>
       </div>
-      <div class="right pt-16 w-1/1">
+      <div class="right pt-16 w-1/4">
         <div class="pb-10">
-          <h3>Tech used</h3>
-          <h2>GraphQL, HTML, CSS, React.</h2>
+          <h3 class="text-gray-500">Tech used</h3>
+          <h2 class="purple-gradient-text">{{post.fields.tech}}</h2>
         </div>
         <a
           :href="item.link"
@@ -72,12 +74,25 @@ h1 {
 }
 
 img {
-  max-width: 500pt;
+  max-width: 600pt;
 }
 
 .content {
   .button {
     @apply bg-orange-500 rounded p-2 mr-2;
+  }
+  .body-content {
+    a {
+      @apply underline;
+    }
+    ul {
+      @apply list-inside list-disc;
+    }
+  }
+  .purple-gradient-text {
+    background: -webkit-linear-gradient(#a3bffa, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 </style>
