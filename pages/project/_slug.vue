@@ -29,7 +29,7 @@
         </div>
         <div v-else class="py-6 flex justify-center">
           <img
-            :src="`${post.fields.coverPhoto.fields.file.url}`"
+            :src="`${post.fields.coverPhoto.fields.file.url}?w=700`"
             :alt="post.fields.coverPhoto.fields.description"
           />
         </div>
