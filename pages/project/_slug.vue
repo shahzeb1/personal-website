@@ -96,6 +96,7 @@ h2 {
 
 h1 {
   @apply font-sans text-white text-5xl font-normal w-3/4;
+  text-transform: capitalize;
 }
 
 img {

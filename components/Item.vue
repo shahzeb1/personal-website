@@ -28,6 +28,7 @@ export default {
 
   .title {
     @apply text-2xl;
+    text-transform: capitalize;
   }
   .links {
     @apply py-2;
