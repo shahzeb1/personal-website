@@ -6,10 +6,13 @@
     <div class="content px-12 flex flex-row justify-between">
       <div class="left pb-12 w-3/4">
         <h1>{{ post.fields.title }}</h1>
-        <div class="py-6 flex justify-center">
-          <img :src="`${post.fields.coverPhoto.fields.file.url}`" alt="Placeholder" />
-        </div>
         <h2>{{ post.fields.subTitle }}</h2>
+        <div class="py-6 flex justify-center">
+          <img
+            :src="`${post.fields.coverPhoto.fields.file.url}`"
+            :alt="post.fields.coverPhoto.fields.description"
+          />
+        </div>
         <div class="body-content">
           <vue-markdown>{{ post.fields.body }}</vue-markdown>
         </div>
@@ -19,13 +22,15 @@
           <h3 class="text-gray-500">Tech used</h3>
           <h2 class="purple-gradient-text">{{post.fields.tech}}</h2>
         </div>
-        <a
-          :href="item.link"
-          v-for="(item, index) in post.fields.homeLinks"
-          :key="index"
-          class="button"
-          target="_blank"
-        >{{ item.title }}</a>
+        <div class="flex flex-wrap button-group">
+          <a
+            :href="item.link"
+            v-for="(item, index) in post.fields.homeLinks"
+            :key="index"
+            class="button"
+            target="_blank"
+          >{{ item.title }}</a>
+        </div>
       </div>
     </div>
   </div>
@@ -54,7 +59,7 @@ export default {
   },
   head() {
     return {
-      title: 'shahzeb.co | project'
+      title: `shahzeb.co | ${this.post.fields.title}`
     };
   }
 };
@@ -79,14 +84,23 @@ img {
 
 .content {
   .button {
-    @apply bg-orange-500 rounded p-2 mr-2;
+    @apply bg-orange-500 rounded p-2 mr-2 my-2;
   }
   .body-content {
+    h2 {
+      @apply py-2;
+    }
+    p {
+      @apply py-2;
+    }
     a {
       @apply underline;
     }
     ul {
       @apply list-inside list-disc;
+    }
+    ol {
+      @apply list-inside list-decimal;
     }
   }
   .purple-gradient-text {

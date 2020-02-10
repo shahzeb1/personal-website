@@ -24,16 +24,22 @@ export default {
 <style lang="scss">
 .proj-item {
   @apply w-1/2 p-2;
+  transition: all 0.3s ease-in-out;
 
   .title {
     @apply text-2xl;
   }
   .links {
-    @apply text-gray-600;
-
+    @apply py-2;
     a {
-      @apply text-gray-700 underline;
+      @apply bg-purple-500 p-2 rounded;
+      &:hover {
+        @apply bg-purple-600;
+      }
     }
+  }
+  &:hover {
+    transform: scale(1.04);
   }
 }
 </style>
