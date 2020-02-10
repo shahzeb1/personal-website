@@ -3,16 +3,21 @@
     <div class="heading">
       <Links />
     </div>
-    <div class="content content-center px-12 flex flex-row justify-between">
-      <div class="left">
+    <div class="content px-12 flex flex-row justify-between">
+      <div class="left pb-12">
         <h1>{{ post.fields.title }}</h1>
-        <h2>{{ post.fields.subTitle}}</h2>
-        <div class="py-6">
-          <img src="http://via.placeholder.com/500x300" alt="Placeholder" />
+        <div class="py-6 flex justify-center">
+          <img
+            :src="`${post.fields.coverPhoto.fields.file.url}?w=500`"
+            alt="Placeholder"
+          />
         </div>
-        <p>A long description of the project</p>
+        <h2>
+          {{ post.fields.subTitle }}
+        </h2>
+        <vue-markdown>{{ post.fields.body }}</vue-markdown>
       </div>
-      <div class="right content-center">
+      <div class="right pt-16">
         <div class="pb-10">
           <h3>Tech used</h3>
           <h2>GraphQL, HTML, CSS, React.</h2>
@@ -24,13 +29,15 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown';
 import Links from '~/components/Links.vue';
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
 export default {
   components: {
-    Links
+    Links,
+    VueMarkdown
   },
   asyncData({ env, params }) {
     return client
@@ -62,6 +69,10 @@ h2 {
 
 h1 {
   @apply font-sans text-white text-5xl font-normal w-3/4;
+}
+
+img {
+  max-width: 500pt;
 }
 
 .content {
