@@ -51,7 +51,8 @@ export default {
   /*
    ** Nuxt.js $jes
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', 'nuxt-purgecss'],
+  purgeCSS: {},
 
   /*
    ** Build configuration

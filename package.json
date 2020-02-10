@@ -15,7 +15,8 @@
     "contentful": "^7.11.1",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
-    "vue-markdown": "^2.2.4"
+    "vue-markdown": "^2.2.4",
+    "nuxt-purgecss": "^0.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
@@ -23,7 +24,6 @@
     "eslint-plugin-prettier": "^3.0.1",
     "node-sass": "^4.13.0",
     "nodemon": "^1.18.9",
-    "nuxt-purgecss": "^0.2.1",
     "prettier": "^1.16.4",
     "sass-loader": "^8.0.0",
     "tailwindcss": "^1.1.4"
