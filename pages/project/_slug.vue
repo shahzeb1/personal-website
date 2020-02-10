@@ -17,6 +17,16 @@
             allowfullscreen
           ></iframe>
         </div>
+        <div v-else-if="post.fields.vimeo" class="vimeo py-6 flex justify-center">
+          <iframe
+            :src="`https://player.vimeo.com/video/${post.fields.vimeo}`"
+            width="640"
+            height="415"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
         <div v-else class="py-6 flex justify-center">
           <img
             :src="`${post.fields.coverPhoto.fields.file.url}`"
@@ -29,7 +39,7 @@
       </div>
       <div class="right pt-16 w-1/4">
         <div class="pb-10">
-          <h3 class="text-gray-500">Tech used</h3>
+          <h3 class="text-gray-500">Tech</h3>
           <h2 class="purple-gradient-text">{{post.fields.tech}}</h2>
         </div>
         <div class="flex flex-wrap button-group">
@@ -94,9 +104,9 @@ img {
 
 .content {
   .button {
-    @apply bg-purple-500 p-2 mr-2 my-2 rounded;
+    @apply bg-purple-600 p-2 mr-2 my-2 rounded;
     &:hover {
-      @apply bg-purple-600;
+      @apply bg-purple-700;
     }
   }
   .body-content {
@@ -117,7 +127,7 @@ img {
     }
   }
   .purple-gradient-text {
-    background: -webkit-linear-gradient(#a3bffa, #667eea);
+    background: -webkit-linear-gradient(#d6bcfa, #9f7aea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

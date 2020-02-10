@@ -2,7 +2,7 @@
   <div class="proj-item">
     <div class="p-3 bg-purple-300 rounded-lg text-black">
       <div class="title">{{ title }}</div>
-      <div class="desc">{{ subTitle }}</div>
+      <div class="desc py-2">{{ subTitle }}</div>
       <div class="links">
         <nuxt-link :to="`/project/${slug}`">View &#x2192;</nuxt-link>
       </div>
@@ -32,9 +32,9 @@ export default {
   .links {
     @apply py-2;
     a {
-      @apply bg-purple-500 p-2 rounded;
+      @apply bg-purple-600 p-2 rounded text-white;
       &:hover {
-        @apply bg-purple-600;
+        @apply bg-purple-700;
       }
     }
   }
