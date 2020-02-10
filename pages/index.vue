@@ -127,7 +127,10 @@ h1 {
   @apply mb-6;
 
   .button {
-    @apply bg-orange-500 rounded p-2 mr-2;
+    @apply bg-purple-500 p-2 mr-2 my-2 rounded;
+    &:hover {
+      @apply bg-purple-600;
+    }
   }
 }
 </style>

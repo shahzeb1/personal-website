@@ -7,7 +7,17 @@
       <div class="left pb-12 w-3/4">
         <h1>{{ post.fields.title }}</h1>
         <h2>{{ post.fields.subTitle }}</h2>
-        <div class="py-6 flex justify-center">
+        <div v-if="post.fields.youtube" class="youtube py-6 flex justify-center">
+          <iframe
+            width="660"
+            height="415"
+            :src="`https://www.youtube.com/embed/${post.fields.youtube}`"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div v-else class="py-6 flex justify-center">
           <img
             :src="`${post.fields.coverPhoto.fields.file.url}`"
             :alt="post.fields.coverPhoto.fields.description"
@@ -84,7 +94,10 @@ img {
 
 .content {
   .button {
-    @apply bg-orange-500 rounded p-2 mr-2 my-2;
+    @apply bg-purple-500 p-2 mr-2 my-2 rounded;
+    &:hover {
+      @apply bg-purple-600;
+    }
   }
   .body-content {
     h2 {
