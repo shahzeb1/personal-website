@@ -5,7 +5,8 @@
     </div>
     <div class="content content-center px-12 flex flex-row justify-between">
       <div class="left">
-        <h1>Project title</h1>
+        <h1>{{ post.fields.title }}</h1>
+        <h2>{{ post.fields.subTitle}}</h2>
         <div class="py-6">
           <img src="http://via.placeholder.com/500x300" alt="Placeholder" />
         </div>
@@ -24,9 +25,28 @@
 
 <script>
 import Links from '~/components/Links.vue';
+import { createClient } from '~/plugins/contentful.js';
+
+const client = createClient();
 export default {
   components: {
     Links
+  },
+  asyncData({ env, params }) {
+    return client
+      .getEntries({ content_type: 'items', 'fields.slug': params.slug })
+      .then(entries => {
+        console.log(entries.items[0].fields);
+        return {
+          post: entries.items[0]
+        };
+      })
+      .catch(console.error);
+  },
+  head() {
+    return {
+      title: 'shahzeb.co | project'
+    };
   }
 };
 </script>
