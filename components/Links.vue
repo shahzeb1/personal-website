@@ -5,8 +5,10 @@
         <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
           <nuxt-link to="/">&#128075;,</nuxt-link>
         </li>
-
         <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">👨‍💻</li>
+        <li @mouseover="hoverNav('blog')" @mouseleave="hoverOfNav">
+          <a href="https://shahzeb.svbtle.com/">✍️</a>
+        </li>
         <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">&#128247;</li>
         <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">&#127946;</li>
       </ul>

@@ -17,7 +17,7 @@
             web-development, messenger bots, and even game development.
           </h2>
         </div>
-        <div class="flex flex-row justify-between my-3">
+        <div class="flex flex-row justify-between flex-wrap">
           <Item
             v-for="(item, index) in projects"
             :key="index"
@@ -52,9 +52,7 @@
       <div class="footer">
         <div class="buttons">
           <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
-          <a href="https://github.com/shahzeb1" class="button" target="_blank"
-            >GitHub</a
-          >
+          <a href="https://github.com/shahzeb1" class="button" target="_blank">GitHub</a>
         </div>
       </div>
     </div>

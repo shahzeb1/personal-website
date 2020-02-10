@@ -1,9 +1,11 @@
 <template>
   <div class="proj-item">
-    <div class="title">{{ title }}</div>
-    <div class="desc">{{ subTitle }}</div>
-    <div class="links">
-      <nuxt-link :to="`/project/${slug}`">View &#x2192;</nuxt-link>
+    <div class="p-3 bg-purple-300 rounded-lg text-black">
+      <div class="title">{{ title }}</div>
+      <div class="desc">{{ subTitle }}</div>
+      <div class="links">
+        <nuxt-link :to="`/project/${slug}`">View &#x2192;</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +23,7 @@ export default {
 
 <style lang="scss">
 .proj-item {
-  @apply p-3 bg-purple-300 rounded-lg text-black w-full mx-2;
+  @apply w-1/2 p-2;
 
   .title {
     @apply text-2xl;
