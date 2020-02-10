@@ -76,14 +76,9 @@ export default {
       .getEntries({ content_type: 'items' })
       .then(({ items }) => {
         const projects = [];
-        const writings = [];
-        items.map(({ fields }) => {
-          if (fields.section === 'project') projects.push(fields);
-          if (fields.section === 'writing') writings.push(fields);
-        });
+        items.map(({ fields }) => projects.push(fields));
         return {
-          projects,
-          writings
+          projects
         };
       })
       .catch(e => console.error(e));
