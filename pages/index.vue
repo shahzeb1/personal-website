@@ -1,34 +1,13 @@
 <template>
-  <div class="bg-gray-900 text-white m-h-screen p-5">
+  <div class="bg-gray-900 text-white min-h-screen p-5">
     <div class="heading">
-      <nav>
-        <div class="emojii">
-          <ul>
-            <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
-              &#128075;,
-            </li>
-            <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">
-              👨‍💻
-            </li>
-            <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">
-              &#128247;
-            </li>
-            <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">
-              &#127946;
-            </li>
-          </ul>
-        </div>
-        <div class="psst">
-          <div class="arrow"></div>
-          <div class="text">{{ state.navHoverText }}</div>
-        </div>
-      </nav>
+      <Links />
+    </div>
+    <div class="content px-12">
       <h1>
         hello. my name is shahzeb and i am a computer scientist, photographer,
         and swimmer.
       </h1>
-    </div>
-    <div class="content">
       <div class="section">
         <div class="item-desc">
           <h2>
@@ -101,13 +80,15 @@
 
 <script>
 import Item from '~/components/Item.vue';
+import Links from '~/components/Links.vue';
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
 
 export default {
   components: {
-    Item
+    Item,
+    Links
   },
   asyncData() {
     return client
@@ -126,27 +107,12 @@ export default {
       })
       .catch(e => console.error(e));
   },
-  data: function() {
-    return {
-      state: {
-        navHoverText: 'psst... this is a navigation',
-        navHoverDefaultText: 'psst... this is a <navitation>'
-      }
-    };
-  },
   head() {
     return {
       title: 'shahzeb.co | home'
     };
   },
-  methods: {
-    hoverNav: function(text) {
-      this.state.navHoverText = text;
-    },
-    hoverOfNav: function() {
-      this.state.navHoverText = this.state.navHoverDefaultText;
-    }
-  }
+  methods: {}
 };
 </script>
 
@@ -159,43 +125,6 @@ h2 {
 }
 h1 {
   @apply font-sans text-white text-5xl font-normal w-3/4;
-}
-nav {
-  @apply flex flex-row content-center text-3xl mb-6;
-
-  .emojii {
-    @apply h-16;
-    ul {
-      @apply flex flex-row;
-      cursor: pointer;
-
-      li {
-        @apply pr-3;
-        &:last-child {
-          @apply pr-0;
-        }
-      }
-    }
-  }
-
-  .psst {
-    @apply flex flex-row content-center ml-3;
-    height: fit-content;
-
-    .text {
-      @apply text-base bg-gray-400 text-gray-800 px-2 py-2 mt-1 rounded italic;
-    }
-
-    .arrow {
-      width: 0;
-      height: 0;
-      border-top: 6pt solid transparent;
-      border-bottom: 6pt solid transparent;
-      border-right: 12pt solid #cbd5e0;
-      content: '';
-      margin-top: 12pt;
-    }
-  }
 }
 .content {
   @apply mt-6;

@@ -3,9 +3,9 @@
     <div class="title">{{ title }}</div>
     <div class="desc">{{ subTitle }}</div>
     <div class="links">
-      <a :href="item.link" v-for="(item, index) in homeLinks" :key="index">{{
-        item.title
-      }}</a>
+      <span v-if="homeLinks">
+        <nuxt-link :to="homeLinks[0].link">{{homeLinks[0].title}}</nuxt-link>
+      </span>
     </div>
   </div>
 </template>
