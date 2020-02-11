@@ -70,8 +70,13 @@ export default {
 
       li {
         @apply pr-3;
+        transition: all 0.2s ease-in-out;
+
         &:last-child {
           @apply pr-0;
+        }
+        &:hover {
+          transform: scale(1.1);
         }
       }
     }
