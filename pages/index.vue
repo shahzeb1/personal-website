@@ -32,16 +32,20 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I
-            <span class="text-white">enjoy writing</span> about both computer
-            science subjects and about general things going on in my life.
+            I enjoy writingabout both computer science subjects and about general things going on in my life. You can
+            <a
+              href="http://shahzeb.svbtle.com/"
+              target="blank"
+            >visit my blog</a> to view all the posts.
           </h2>
         </div>
         <div class="flex flex-col justify-between my-3">
           <Writing
-            title="Demystifying Typescript + Webpack + Babel"
-            description="A deep dive into how to use TypeScript. Also explains what the role of Webpack and Babel is."
-            link="https://shahzeb.svbtle.com/understanding-typescript-webpack-babel"
+            :title="item.title"
+            :description="item.description"
+            :link="item.link"
+            v-for="(item, index) in posts"
+            :key="index"
           />
         </div>
       </div>
@@ -50,7 +54,7 @@
         <div class="item-desc">
           <h2>
             I have a computer science degree from University of California,
-            Davis (B.S.).
+            Davis (B.S.). Feel free to reach out.
           </h2>
         </div>
       </div>
@@ -58,7 +62,7 @@
       <div class="footer">
         <div class="buttons">
           <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
-          <a href="https://github.com/shahzeb1" class="button" target="_blank">GitHub</a>
+          <a href="https://github.com/shahzeb1" class="button" target="_blank">Github</a>
         </div>
       </div>
     </div>
@@ -80,7 +84,7 @@ export default {
     Writing
   },
   asyncData() {
-    return client
+    const proj = client
       .getEntries({ content_type: 'items' })
       .then(({ items }) => {
         const projects = [];
@@ -88,6 +92,23 @@ export default {
         return {
           projects
         };
+      })
+      .catch(e => console.error(e));
+
+    const writing = client
+      .getEntries({ content_type: 'blog', order: 'sys.createdAt' })
+      .then(({ items }) => {
+        const posts = [];
+        items.map(({ fields }) => posts.push(fields));
+        return {
+          posts
+        };
+      })
+      .catch(e => console.error(e));
+
+    return Promise.all([proj, writing])
+      .then(([projects, posts]) => {
+        return { projects: projects.projects, posts: posts.posts };
       })
       .catch(e => console.error(e));
   },
@@ -121,6 +142,10 @@ h1 {
 
       h2 {
         @apply mr-2  text-gray-500;
+      }
+
+      a {
+        @apply text-white;
       }
     }
   }

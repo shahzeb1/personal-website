@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="blog p-3 rounded-lg text-black">
+    <div class="blog p-3 mb-3 rounded-lg text-black">
       <h1>{{title}}</h1>
       <h2>{{description}}</h2>
       <a :href="link" class="read-more">Read more &#x2192;</a>
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 .blog {
-  background-image: linear-gradient(to right, #d6bcfa, #b794f4);
+  background-image: linear-gradient(to right, #4fd1c5, #38b2ac);
   h1 {
     @apply text-2xl text-black;
   }
