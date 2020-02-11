@@ -5,7 +5,8 @@
     </div>
     <div class="content px-12">
       <h1 class="animated slideInUp delay-1s">
-        hello. my name is shahzeb and i am a computer scientist, photographer,
+        hello. my name is
+        <span class="purple-gradient-text">shahzeb</span> and i am a computer scientist, photographer,
         and swimmer.
       </h1>
       <div class="section animated fadeIn delay-3s">
@@ -166,7 +167,14 @@ h2 {
   @apply font-sans text-white font-normal text-3xl;
 }
 h1 {
-  @apply font-sans text-white text-5xl font-normal w-3/4;
+  @apply font-sans font-thin text-white text-5xl font-normal w-3/4;
+
+  .purple-gradient-text {
+    @apply font-medium;
+    background: -webkit-linear-gradient(#d6bcfa, #9f7aea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 .content {
   @apply mt-6;
@@ -182,7 +190,7 @@ h1 {
       }
 
       a {
-        @apply text-white;
+        @apply text-white underline;
       }
     }
   }
