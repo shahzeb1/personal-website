@@ -85,7 +85,7 @@ export default {
   },
   asyncData() {
     const proj = client
-      .getEntries({ content_type: 'items' })
+      .getEntries({ content_type: 'items', order: '-fields.order' })
       .then(({ items }) => {
         const projects = [];
         items.map(({ fields }) => projects.push(fields));
