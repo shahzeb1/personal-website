@@ -56,7 +56,7 @@
         <div class="item-desc">
           <h2>
             I really
-            <span class="text-white">enjoy photography</span>. Here are some recent images I have taken of various beaches.
+            <span class="text-white">enjoy photography</span>. Here are some recent images I have taken at various beaches.
           </h2>
         </div>
         <div class="flex flex-row flex-wrap">
@@ -68,6 +68,19 @@
             :image="item.image.fields.file.url"
           />
         </div>
+      </div>
+
+      <div class="section">
+        <div class="item-desc">
+          <h2>What am I currently working on? Well...</h2>
+        </div>
+        <blockquote class="twitter-tweet">
+          <p lang="en" dir="ltr">brb i am going to make my own music social network</p>&mdash; shahz (@shahzebdev)
+          <a
+            href="https://twitter.com/shahzebdev/status/1187987785308721153?ref_src=twsrc%5Etfw"
+          >October 26, 2019</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
       <div class="section">
