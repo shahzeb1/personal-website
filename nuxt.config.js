@@ -85,5 +85,7 @@ export default {
         id: 'UA-15315607-5'
       }
     ]
-  ]
+  ],
+
+  serverMiddleware: ['~/api/blogRedirect']
 };
