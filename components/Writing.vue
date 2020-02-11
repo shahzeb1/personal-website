@@ -20,12 +20,15 @@ export default {
 
 <style lang="scss">
 .blog {
-  background-image: linear-gradient(to right, #4fd1c5, #38b2ac);
+  background-image: linear-gradient(to right, #2c7a7b, #285e61);
   h1 {
-    @apply text-2xl text-black;
+    @apply text-2xl text-white;
   }
   h2 {
-    @apply text-lg text-gray-800;
+    @apply text-lg text-gray-300;
+  }
+  a {
+    @apply text-white;
   }
 }
 </style>

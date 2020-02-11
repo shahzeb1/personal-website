@@ -32,7 +32,7 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I enjoy writingabout both computer science subjects and about general things going on in my life. You can
+            I enjoy writing about both computer science subjects and about general things going on in my life. You can
             <a
               href="http://shahzeb.svbtle.com/"
               target="blank"
