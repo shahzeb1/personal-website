@@ -3,8 +3,8 @@
     <div class="heading">
       <Links />
     </div>
-    <div class="item-content px-12 flex flex-row justify-between">
-      <div class="left pb-12 w-3/4">
+    <div class="px-12 flex flex-row justify-between">
+      <div class="item-content left pb-12 w-3/4">
         <h1 class="animated slideInUp">{{ post.fields.title }}</h1>
         <div class="animated fadeIn delay-1s">
           <h2>{{ post.fields.subTitle }}</h2>
@@ -40,10 +40,11 @@
         </div>
       </div>
       <div class="right pt-16 w-1/4 animated slideInRight">
-        <div class="pb-10">
+        <div class="pb-4">
           <h3 class="text-gray-500">Tech</h3>
           <h2 class="purple-gradient-text">{{post.fields.tech}}</h2>
         </div>
+        <h3 class="text-gray-500">Links</h3>
         <div class="flex flex-wrap button-group">
           <a
             :href="item.link"
@@ -94,7 +95,7 @@ export default {
   }
 
   h2 {
-    @apply font-sans text-white font-normal text-3xl;
+    @apply font-sans text-gray-500 font-normal text-3xl;
   }
 
   h1 {
@@ -106,12 +107,6 @@ export default {
     max-width: 600pt;
   }
 
-  .button {
-    @apply bg-purple-600 p-2 mr-2 my-2 rounded;
-    &:hover {
-      @apply bg-purple-700;
-    }
-  }
   .body-content {
     h2 {
       @apply py-2;
@@ -129,10 +124,18 @@ export default {
       @apply list-inside list-decimal;
     }
   }
+}
+.right {
   .purple-gradient-text {
     background: -webkit-linear-gradient(#d6bcfa, #9f7aea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .button {
+    @apply bg-purple-600 p-2 mr-2 my-2 rounded;
+    &:hover {
+      @apply bg-purple-700;
+    }
   }
 }
 </style>
