@@ -80,7 +80,6 @@
             href="https://twitter.com/shahzebdev/status/1187987785308721153?ref_src=twsrc%5Etfw"
           >October 26, 2019</a>
         </blockquote>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
 
       <div class="section">
