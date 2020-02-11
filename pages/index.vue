@@ -1,14 +1,14 @@
 <template>
   <div class="bg-gray-900 text-white min-h-screen p-5">
-    <div class="heading">
+    <div class="heading animated slideInLeft">
       <Links />
     </div>
     <div class="content px-12">
-      <h1>
+      <h1 class="animated slideInUp delay-2s">
         hello. my name is shahzeb and i am a computer scientist, photographer,
         and swimmer.
       </h1>
-      <div class="section">
+      <div class="section animated fadeIn delay-4s">
         <div class="item-desc">
           <h2>
             My
