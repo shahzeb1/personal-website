@@ -53,6 +53,24 @@
       <div class="section">
         <div class="item-desc">
           <h2>
+            I really
+            <span class="text-white">enjoy photography</span>. Here are some recent images I have taken of various beaches.
+          </h2>
+        </div>
+        <div class="flex flex-row flex-wrap">
+          <Photography
+            v-for="(item, index) in photography"
+            :key="index"
+            :title="item.title"
+            :slug="item.slug"
+            :image="item.image.fields.file.url"
+          />
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="item-desc">
+          <h2>
             I have a computer science degree from University of California,
             Davis (B.S.). Feel free to reach out.
           </h2>
@@ -73,6 +91,7 @@
 import Item from '~/components/Item.vue';
 import Links from '~/components/Links.vue';
 import Writing from '~/components/Writing.vue';
+import Photography from '~/components/Photography.vue';
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
@@ -81,7 +100,8 @@ export default {
   components: {
     Item,
     Links,
-    Writing
+    Writing,
+    Photography
   },
   asyncData() {
     const proj = client
@@ -106,9 +126,25 @@ export default {
       })
       .catch(e => console.error(e));
 
-    return Promise.all([proj, writing])
-      .then(([projects, posts]) => {
-        return { projects: projects.projects, posts: posts.posts };
+    const photog = client
+      .getEntries({ content_type: 'photography', order: '-fields.order' })
+      .then(({ items }) => {
+        const photography = [];
+        items.map(({ fields }) => photography.push(fields));
+        return {
+          photography
+        };
+      })
+      .catch(e => console.error(e));
+
+    return Promise.all([proj, writing, photog])
+      .then(([projects, posts, photography]) => {
+        console.log(photography);
+        return {
+          projects: projects.projects,
+          posts: posts.posts,
+          photography: photography.photography
+        };
       })
       .catch(e => console.error(e));
   },
