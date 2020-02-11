@@ -4,11 +4,11 @@
       <Links />
     </div>
     <div class="content px-12">
-      <h1 class="animated slideInUp delay-2s">
+      <h1 class="animated slideInUp delay-1s">
         hello. my name is shahzeb and i am a computer scientist, photographer,
         and swimmer.
       </h1>
-      <div class="section animated fadeIn delay-4s">
+      <div class="section animated fadeIn delay-3s">
         <div class="item-desc">
           <h2>
             My

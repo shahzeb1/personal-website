@@ -24,7 +24,7 @@
         </li>
       </ul>
     </div>
-    <div class="psst animated fadeIn delay-2s">
+    <div class="psst animated fadeIn delay-3s">
       <div class="arrow"></div>
       <div class="text">{{ state.navHoverText }}</div>
     </div>

@@ -5,39 +5,41 @@
     </div>
     <div class="item-content px-12 flex flex-row justify-between">
       <div class="left pb-12 w-3/4">
-        <h1>{{ post.fields.title }}</h1>
-        <h2>{{ post.fields.subTitle }}</h2>
-        <div v-if="post.fields.youtube" class="youtube py-6 flex justify-center">
-          <iframe
-            width="660"
-            height="415"
-            :src="`https://www.youtube.com/embed/${post.fields.youtube}`"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div v-else-if="post.fields.vimeo" class="vimeo py-6 flex justify-center">
-          <iframe
-            :src="`https://player.vimeo.com/video/${post.fields.vimeo}`"
-            width="640"
-            height="415"
-            frameborder="0"
-            allow="autoplay; fullscreen"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div v-else class="py-6 flex justify-center">
-          <img
-            :src="`${post.fields.coverPhoto.fields.file.url}?w=700`"
-            :alt="post.fields.coverPhoto.fields.description"
-          />
-        </div>
-        <div class="body-content">
-          <vue-markdown>{{ post.fields.body }}</vue-markdown>
+        <h1 class="animated slideInUp">{{ post.fields.title }}</h1>
+        <div class="animated fadeIn delay-1s">
+          <h2>{{ post.fields.subTitle }}</h2>
+          <div v-if="post.fields.youtube" class="youtube py-6 flex justify-center">
+            <iframe
+              width="660"
+              height="415"
+              :src="`https://www.youtube.com/embed/${post.fields.youtube}`"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div v-else-if="post.fields.vimeo" class="vimeo py-6 flex justify-center">
+            <iframe
+              :src="`https://player.vimeo.com/video/${post.fields.vimeo}`"
+              width="640"
+              height="415"
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div v-else class="py-6 flex justify-center">
+            <img
+              :src="`${post.fields.coverPhoto.fields.file.url}?w=700`"
+              :alt="post.fields.coverPhoto.fields.description"
+            />
+          </div>
+          <div class="body-content">
+            <vue-markdown>{{ post.fields.body }}</vue-markdown>
+          </div>
         </div>
       </div>
-      <div class="right pt-16 w-1/4">
+      <div class="right pt-16 w-1/4 animated slideInRight">
         <div class="pb-10">
           <h3 class="text-gray-500">Tech</h3>
           <h2 class="purple-gradient-text">{{post.fields.tech}}</h2>
