@@ -30,7 +30,7 @@ export default {
           'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'
       }
     ],
-    script: [{ src: 'https://platform.twitter.com/widgets.js' }]
+    script: [{ src: 'https://platform.twitter.com/widgets.js', defer: true }]
   },
 
   /*
