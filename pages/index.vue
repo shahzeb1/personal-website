@@ -37,7 +37,13 @@
             science subjects and about general things going on in my life.
           </h2>
         </div>
-        <div class="flex flex-row justify-between my-3"></div>
+        <div class="flex flex-col justify-between my-3">
+          <Writing
+            title="Demystifying Typescript + Webpack + Babel"
+            description="A deep dive into how to use TypeScript. Also explains what the role of Webpack and Babel is."
+            link="https://shahzeb.svbtle.com/understanding-typescript-webpack-babel"
+          />
+        </div>
       </div>
 
       <div class="section">
@@ -62,6 +68,7 @@
 <script>
 import Item from '~/components/Item.vue';
 import Links from '~/components/Links.vue';
+import Writing from '~/components/Writing.vue';
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
@@ -69,7 +76,8 @@ const client = createClient();
 export default {
   components: {
     Item,
-    Links
+    Links,
+    Writing
   },
   asyncData() {
     return client

@@ -3,7 +3,7 @@
     <div class="heading">
       <Links />
     </div>
-    <div class="content px-12 flex flex-row justify-between">
+    <div class="item-content px-12 flex flex-row justify-between">
       <div class="left pb-12 w-3/4">
         <h1>{{ post.fields.title }}</h1>
         <h2>{{ post.fields.subTitle }}</h2>
@@ -86,24 +86,24 @@ export default {
 </script>
 
 <style lang="scss">
-h3 {
-  @apply font-sans text-white font-normal text-2xl;
-}
+.item-content {
+  h3 {
+    @apply font-sans text-white font-normal text-2xl;
+  }
 
-h2 {
-  @apply font-sans text-white font-normal text-3xl;
-}
+  h2 {
+    @apply font-sans text-white font-normal text-3xl;
+  }
 
-h1 {
-  @apply font-sans text-white text-5xl font-normal w-3/4;
-  text-transform: capitalize;
-}
+  h1 {
+    @apply font-sans text-white text-5xl font-normal;
+    text-transform: capitalize;
+  }
 
-img {
-  max-width: 600pt;
-}
+  img {
+    max-width: 600pt;
+  }
 
-.content {
   .button {
     @apply bg-purple-600 p-2 mr-2 my-2 rounded;
     &:hover {
