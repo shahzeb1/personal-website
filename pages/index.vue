@@ -46,6 +46,7 @@
             :link="item.link"
             v-for="(item, index) in posts"
             :key="index"
+            :index="index+1"
           />
         </div>
       </div>

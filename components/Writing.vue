@@ -1,9 +1,14 @@
 <template>
   <div>
     <div class="blog p-3 mb-3 rounded-lg text-black">
-      <h1>{{title}}</h1>
-      <h2>{{description}}</h2>
-      <a :href="link" class="read-more">Read more &#x2192;</a>
+      <div class="flex flex-row">
+        <div class="index text-teal-800 text-3xl self-center">{{index}}</div>
+        <div class="everything pl-5">
+          <h1>{{title}}</h1>
+          <h2>{{description}}</h2>
+          <a :href="link" class="read-more">Read more &#x2192;</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -13,7 +18,8 @@ export default {
   props: {
     title: String,
     description: String,
-    link: String
+    link: String,
+    index: Number
   }
 };
 </script>
