@@ -154,7 +154,6 @@ export default {
 
     return Promise.all([proj, writing, photog])
       .then(([projects, posts, photography]) => {
-        console.log(photography);
         return {
           projects: projects.projects,
           posts: posts.posts,
