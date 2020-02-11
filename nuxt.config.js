@@ -30,7 +30,7 @@ export default {
           'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'
       }
     ],
-    script: [{ src: 'https://platform.twitter.com/widgets.js', defer: true }]
+    script: [{ src: 'https://platform.twitter.com/widgets.js' }]
   },
 
   /*
@@ -76,5 +76,14 @@ export default {
       }
     },
     extend(config, ctx) {}
-  }
+  },
+
+  buildModules: [
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-15315607-5'
+      }
+    ]
+  ]
 };
