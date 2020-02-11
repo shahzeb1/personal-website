@@ -87,5 +87,5 @@ export default {
     ]
   ],
 
-  serverMiddleware: ['~/api/blogRedirect']
+  serverMiddleware: ['~/serverMiddleware/blogRedirect']
 };
