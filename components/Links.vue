@@ -3,14 +3,25 @@
     <div class="emojii">
       <ul>
         <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
-          <nuxt-link to="/">&#128075;,</nuxt-link>
+          <nuxt-link to="/">
+            <img src="~/assets/img/wave.png" />
+            <span class="ml-1">,</span>
+          </nuxt-link>
         </li>
-        <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">👨‍💻</li>
+        <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">
+          <img src="~/assets/img/male-techie.png" />
+        </li>
         <li @mouseover="hoverNav('blog')" @mouseleave="hoverOfNav">
-          <a href="https://shahzeb.svbtle.com/">✍️</a>
+          <a href="https://shahzeb.svbtle.com/">
+            <img src="~/assets/img/writing.png" />
+          </a>
         </li>
-        <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">&#128247;</li>
-        <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">&#127946;</li>
+        <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">
+          <img src="~/assets/img/camera.png" />
+        </li>
+        <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">
+          <img src="~/assets/img/swimming.png" />
+        </li>
       </ul>
     </div>
     <div class="psst">
@@ -47,6 +58,12 @@ export default {
 
   .emojii {
     @apply h-16;
+
+    img {
+      width: 30pt;
+      display: inline-block;
+    }
+
     ul {
       @apply flex flex-row;
       cursor: pointer;
@@ -61,7 +78,7 @@ export default {
   }
 
   .psst {
-    @apply flex flex-row content-center ml-3;
+    @apply flex flex-row content-center ml-3 pt-1;
     height: fit-content;
 
     .text {
