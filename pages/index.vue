@@ -1,13 +1,22 @@
 <template>
   <div class="bg-gray-900 text-white min-h-screen p-5">
-    <div class="heading animated slideInLeft">
-      <Links />
+    <div class="heading">
+      <div class="flex flex-row">
+        <div class="flex-1 animated slideInLeft">
+          <Links />
+        </div>
+        <div class="flex-1 text-right contact-links animated fadeIn delay-3s">
+          <div class="buttons">
+            <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
+            <a href="https://github.com/shahzeb1" class="button" target="_blank">Github</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="content px-12">
       <h1 class="animated slideInUp delay-1s">
         hello. my name is
-        <span class="purple-gradient-text">shahzeb</span> and i am a computer scientist, photographer,
-        and swimmer.
+        <span class="purple-gradient-text">shahzeb</span> and i am a full-stack developer, AI researcher, and data analyst.
       </h1>
       <div class="section animated fadeIn delay-3s">
         <div class="item-desc">
@@ -15,7 +24,7 @@
             My
             <span class="text-white">technical projects</span>
             span many disciplines such as machine learning, IoT,
-            web-development, messenger bots, and even game development.
+            web-development, bots, and even game development.
           </h2>
         </div>
         <div class="flex flex-row justify-between flex-wrap">
@@ -26,6 +35,7 @@
             :subTitle="item.subTitle"
             :homeLinks="item.homeLinks"
             :slug="item.slug"
+            :tagLine="item.tag"
           />
         </div>
       </div>
@@ -33,7 +43,7 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I enjoy writing about both computer science subjects and about general things going on in my life. You can
+            I enjoy writing about both technical subjects and about things going on in my life. You can
             <a
               href="http://shahzeb.svbtle.com/"
               target="blank"
@@ -55,8 +65,8 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I really
-            <span class="text-white">enjoy photography</span>. Here are some recent images I have taken at various beaches.
+            I am passionate about
+            <span class="text-white">photography</span>. Here are some recent images I took at various beaches.
           </h2>
         </div>
         <div class="flex flex-row flex-wrap">
@@ -84,17 +94,10 @@
 
       <div class="section">
         <div class="item-desc">
-          <h2>
-            I have a computer science degree from University of California,
-            Davis (B.S.). Feel free to reach out.
-          </h2>
-        </div>
-      </div>
-
-      <div class="footer">
-        <div class="buttons">
-          <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
-          <a href="https://github.com/shahzeb1" class="button" target="_blank">Github</a>
+          <h3>
+            Computer Science graduate from University of California,
+            Davis (B.S.).
+          </h3>
         </div>
       </div>
     </div>
@@ -196,8 +199,12 @@ h1 {
     .item-desc {
       @apply w-3/4 mb-6;
 
+      h3 {
+        @apply text-gray-500;
+      }
+
       h2 {
-        @apply mr-2  text-gray-500;
+        @apply mr-2 text-gray-500;
       }
 
       a {
@@ -207,8 +214,8 @@ h1 {
   }
 }
 
-.footer {
-  @apply mb-6;
+.contact-links {
+  @apply mt-3;
 
   .button {
     @apply bg-purple-600 p-2 mr-2 my-2 rounded text-white;

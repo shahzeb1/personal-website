@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="blog p-3 mb-3 rounded-lg text-black">
+    <div class="blog p-3 mb-3 rounded-lg text-black" v-on:click="goToPost(link)">
       <div class="flex flex-row">
         <div class="index text-teal-800 text-3xl self-center">{{index}}</div>
         <div class="everything pl-5">
@@ -20,6 +20,11 @@ export default {
     description: String,
     link: String,
     index: Number
+  },
+  methods: {
+    goToPost: function(link) {
+      window.location = link;
+    }
   }
 };
 </script>
@@ -27,6 +32,7 @@ export default {
 <style lang="scss">
 .blog {
   background-image: linear-gradient(to right, #2c7a7b, #285e61);
+  cursor: pointer;
   h1 {
     @apply text-2xl text-white;
   }
