@@ -25,6 +25,7 @@
             :subTitle="item.subTitle"
             :homeLinks="item.homeLinks"
             :slug="item.slug"
+            :tagLine="item.tag"
           />
         </div>
       </div>
