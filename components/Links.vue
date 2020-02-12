@@ -8,19 +8,10 @@
             <span class="ml-1">,</span>
           </nuxt-link>
         </li>
-        <li @mouseover="hoverNav('projects')" @mouseleave="hoverOfNav">
-          <img src="~/assets/img/male-techie.png" />
-        </li>
         <li @mouseover="hoverNav('blog')" @mouseleave="hoverOfNav">
           <a href="https://shahzeb.svbtle.com/">
             <img src="~/assets/img/writing.png" />
           </a>
-        </li>
-        <li @mouseover="hoverNav('photography')" @mouseleave="hoverOfNav">
-          <img src="~/assets/img/camera.png" />
-        </li>
-        <li @mouseover="hoverNav('swimming')" @mouseleave="hoverOfNav">
-          <img src="~/assets/img/swimming.png" />
         </li>
       </ul>
     </div>

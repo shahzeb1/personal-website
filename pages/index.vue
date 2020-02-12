@@ -6,8 +6,7 @@
     <div class="content px-12">
       <h1 class="animated slideInUp delay-1s">
         hello. my name is
-        <span class="purple-gradient-text">shahzeb</span> and i am a computer scientist, photographer,
-        and swimmer.
+        <span class="purple-gradient-text">shahzeb</span> and i am a full-stack developer, AI researcher, and data analyst.
       </h1>
       <div class="section animated fadeIn delay-3s">
         <div class="item-desc">
@@ -15,7 +14,7 @@
             My
             <span class="text-white">technical projects</span>
             span many disciplines such as machine learning, IoT,
-            web-development, messenger bots, and even game development.
+            web-development, bots, and even game development.
           </h2>
         </div>
         <div class="flex flex-row justify-between flex-wrap">
@@ -33,7 +32,7 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I enjoy writing about both computer science subjects and about general things going on in my life. You can
+            I enjoy writing about both technical subjects and about things going on in my life. You can
             <a
               href="http://shahzeb.svbtle.com/"
               target="blank"
@@ -55,8 +54,8 @@
       <div class="section">
         <div class="item-desc">
           <h2>
-            I really
-            <span class="text-white">enjoy photography</span>. Here are some recent images I have taken at various beaches.
+            I am passionate about
+            <span class="text-white">photography</span>. Here are some recent images I took at various beaches.
           </h2>
         </div>
         <div class="flex flex-row flex-wrap">
@@ -84,10 +83,10 @@
 
       <div class="section">
         <div class="item-desc">
-          <h2>
-            I have a computer science degree from University of California,
-            Davis (B.S.). Feel free to reach out.
-          </h2>
+          <h3>
+            Computer Science graduate from University of California,
+            Davis (B.S.).
+          </h3>
         </div>
       </div>
 
@@ -196,8 +195,12 @@ h1 {
     .item-desc {
       @apply w-3/4 mb-6;
 
+      h3 {
+        @apply text-gray-500;
+      }
+
       h2 {
-        @apply mr-2  text-gray-500;
+        @apply mr-2 text-gray-500;
       }
 
       a {
