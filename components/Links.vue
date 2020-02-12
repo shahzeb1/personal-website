@@ -15,7 +15,7 @@
         </li>
       </ul>
     </div>
-    <div class="psst animated fadeIn delay-3s">
+    <div class="hidden psst animated fadeIn delay-3s">
       <div class="arrow"></div>
       <div class="text">{{ state.navHoverText }}</div>
     </div>
@@ -27,8 +27,8 @@ export default {
   data: function() {
     return {
       state: {
-        navHoverText: 'psst... this is a navigation',
-        navHoverDefaultText: 'psst... this is a <navitation>'
+        navHoverText: 'navigation',
+        navHoverDefaultText: 'navigation'
       }
     };
   },
@@ -74,7 +74,7 @@ export default {
   }
 
   .psst {
-    @apply flex flex-row content-center ml-3 pt-1;
+    @apply flex-1 flex flex-row content-center ml-3 pt-1;
     height: fit-content;
 
     .text {

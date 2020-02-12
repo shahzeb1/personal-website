@@ -40,9 +40,9 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section md:w-3/4">
         <div class="item-desc">
-          <h2>
+          <h2 class="md:w-3/4">
             I enjoy writing about both technical subjects and about things going on in my life. You can
             <a
               href="http://shahzeb.svbtle.com/"
@@ -50,7 +50,7 @@
             >visit my blog</a> to view all the posts.
           </h2>
         </div>
-        <div class="flex flex-col justify-between my-3">
+        <div class="flex flex-col justify-between my-3 md:w-3/4">
           <Writing
             :title="item.title"
             :description="item.description"
@@ -62,14 +62,14 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section md:w-3/4">
         <div class="item-desc">
-          <h2>
+          <h2 class="md:w-3/4">
             I am passionate about
             <span class="text-white">photography</span>. Here are some recent images I took at various beaches.
           </h2>
         </div>
-        <div class="flex flex-row flex-wrap">
+        <div class="flex flex-row flex-wrap md:w-3/4 md:justify-start justify-center">
           <Photography
             v-for="(item, index) in photography"
             :key="index"
