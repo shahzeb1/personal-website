@@ -1,7 +1,17 @@
 <template>
   <div class="bg-gray-900 text-white min-h-screen p-5">
-    <div class="heading animated slideInLeft">
-      <Links />
+    <div class="heading">
+      <div class="flex flex-row">
+        <div class="flex-1 animated slideInLeft">
+          <Links />
+        </div>
+        <div class="flex-1 text-right contact-links animated fadeIn delay-3s">
+          <div class="buttons">
+            <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
+            <a href="https://github.com/shahzeb1" class="button" target="_blank">Github</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="content px-12">
       <h1 class="animated slideInUp delay-1s">
@@ -88,13 +98,6 @@
             Computer Science graduate from University of California,
             Davis (B.S.).
           </h3>
-        </div>
-      </div>
-
-      <div class="footer">
-        <div class="buttons">
-          <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
-          <a href="https://github.com/shahzeb1" class="button" target="_blank">Github</a>
         </div>
       </div>
     </div>
@@ -211,8 +214,8 @@ h1 {
   }
 }
 
-.footer {
-  @apply mb-6;
+.contact-links {
+  @apply mt-3;
 
   .button {
     @apply bg-purple-600 p-2 mr-2 my-2 rounded text-white;
