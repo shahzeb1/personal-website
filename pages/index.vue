@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900 text-white min-h-screen p-5">
+  <div class="bg-gray-900 text-white min-h-screen md:p-5 p-3">
     <div class="heading">
       <div class="flex flex-row">
         <div class="flex-1 animated slideInLeft">
@@ -13,21 +13,21 @@
         </div>
       </div>
     </div>
-    <div class="content px-12">
+    <div class="content md:px-12 px-4">
       <h1 class="animated slideInUp delay-1s">
         hello. my name is
         <span class="purple-gradient-text">shahzeb</span> and i am a full-stack developer, AI researcher, and data analyst.
       </h1>
-      <div class="section animated fadeIn delay-3s">
+      <div class="section md:w-3/4 animated fadeIn delay-3s">
         <div class="item-desc">
-          <h2>
+          <h2 class="md:w-3/4">
             My
             <span class="text-white">technical projects</span>
             span many disciplines such as machine learning, IoT,
             web-development, bots, and even game development.
           </h2>
         </div>
-        <div class="flex flex-row justify-between flex-wrap">
+        <div class="flex flex-col md:flex-row justify-between flex-wrap w-full md:w-3/4">
           <Item
             v-for="(item, index) in projects"
             :key="index"
@@ -40,9 +40,9 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section md:w-3/4">
         <div class="item-desc">
-          <h2>
+          <h2 class="md:w-3/4">
             I enjoy writing about both technical subjects and about things going on in my life. You can
             <a
               href="http://shahzeb.svbtle.com/"
@@ -50,7 +50,7 @@
             >visit my blog</a> to view all the posts.
           </h2>
         </div>
-        <div class="flex flex-col justify-between my-3">
+        <div class="flex flex-col justify-between my-3 md:w-3/4">
           <Writing
             :title="item.title"
             :description="item.description"
@@ -62,14 +62,14 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section md:w-3/4">
         <div class="item-desc">
-          <h2>
+          <h2 class="md:w-3/4">
             I am passionate about
             <span class="text-white">photography</span>. Here are some recent images I took at various beaches.
           </h2>
         </div>
-        <div class="flex flex-row flex-wrap">
+        <div class="flex flex-row flex-wrap md:w-3/4 md:justify-start justify-center">
           <Photography
             v-for="(item, index) in photography"
             :key="index"
@@ -181,7 +181,7 @@ h2 {
   @apply font-sans text-white font-normal text-3xl;
 }
 h1 {
-  @apply font-sans font-thin text-white text-5xl font-normal w-3/4;
+  @apply font-sans font-thin text-white text-5xl font-normal w-full;
 
   .purple-gradient-text {
     @apply font-medium;
@@ -194,10 +194,10 @@ h1 {
   @apply mt-6;
 
   .section {
-    @apply mb-4 w-3/4 py-2;
+    @apply mb-4 w-full py-2;
 
     .item-desc {
-      @apply w-3/4 mb-6;
+      @apply w-full mb-6;
 
       h3 {
         @apply text-gray-500;

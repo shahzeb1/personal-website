@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-gray-900 text-white min-h-screen p-5">
+  <div class="bg-gray-900 text-white min-h-screen md:p-5 p-3">
     <div class="heading">
       <Links />
     </div>
-    <div class="px-12 flex flex-row justify-between">
-      <div class="item-content left pb-12 w-3/4">
+    <div class="md:px-12 px-4 flex flex-col lg:flex-row justify-between">
+      <div class="item-content left pb-12 lg:w-3/4 w-full">
         <h1 class="animated slideInUp">{{ post.fields.title }}</h1>
         <div class="animated fadeIn delay-1s">
           <h2>{{ post.fields.subTitle }}</h2>
@@ -28,7 +28,7 @@
               allowfullscreen
             ></iframe>
           </div>
-          <div v-else class="py-6 flex justify-center">
+          <div v-else class="py-6 flex justify-center image-container">
             <img
               :src="`${post.fields.coverPhoto.fields.file.url}?w=700`"
               :alt="post.fields.coverPhoto.fields.description"
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="right pt-16 w-1/4 animated slideInRight">
+      <div class="right lg:pt-16 lg:pl-4 w-full lg:w-1/4 animated slideInRight">
         <div class="pb-4">
           <h3 class="text-gray-500">Tech</h3>
           <h2 class="purple-gradient-text">{{post.fields.tech}}</h2>
@@ -103,8 +103,12 @@ export default {
     text-transform: capitalize;
   }
 
-  img {
+  img-container {
     max-width: 600pt;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .body-content {
