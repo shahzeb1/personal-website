@@ -1,14 +1,13 @@
 <template>
   <div class="nav">
     <div class="emojii">
-      <ul>
-        <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav">
+      <ul class="flex flex-col">
+        <li @mouseover="hoverNav('homepage')" @mouseleave="hoverOfNav" class="flex-1">
           <nuxt-link to="/">
             <img src="~/assets/img/wave.png" />
-            <span class="ml-1">,</span>
           </nuxt-link>
         </li>
-        <li @mouseover="hoverNav('blog')" @mouseleave="hoverOfNav">
+        <li @mouseover="hoverNav('blog')" @mouseleave="hoverOfNav" class="flex-1">
           <a href="https://shahzeb.svbtle.com/">
             <img src="~/assets/img/writing.png" />
           </a>
