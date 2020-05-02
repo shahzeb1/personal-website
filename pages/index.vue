@@ -8,7 +8,8 @@
         <div class="flex-1 text-right contact-links animated fadeIn delay-3s">
           <div class="buttons">
             <a href="mailto:shahzeb.k@me.com" class="button">Email</a>
-            <a href="https://github.com/shahzeb1" class="button" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/shahzeb-k/" class="button" target="_blank">LinkedIn</a>
+            <a href="https://github.com/shahzeb1" class="button" target="_blank">Git</a>
           </div>
         </div>
       </div>
