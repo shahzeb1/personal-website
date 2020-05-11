@@ -101,6 +101,13 @@
           </h3>
         </div>
       </div>
+
+      <div class="section">
+        <div class="item-desc">
+          <h3>Built using Nuxt, Vue, Tailwind.css, and hosted on Vercel (formally zeit).</h3>
+          <Git />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -110,6 +117,7 @@ import Item from '~/components/Item.vue';
 import Links from '~/components/Links.vue';
 import Writing from '~/components/Writing.vue';
 import Photography from '~/components/Photography.vue';
+import Git from '~/components/Git.vue';
 import { createClient } from '~/plugins/contentful.js';
 
 const client = createClient();
@@ -119,9 +127,11 @@ export default {
     Item,
     Links,
     Writing,
-    Photography
+    Photography,
+    Git
   },
   asyncData() {
+    // Contentful fetch projects
     const proj = client
       .getEntries({ content_type: 'items', order: '-fields.order' })
       .then(({ items }) => {
@@ -133,6 +143,7 @@ export default {
       })
       .catch(e => console.error(e));
 
+    // Contentful fetch blog posts
     const writing = client
       .getEntries({ content_type: 'blog', order: 'sys.createdAt' })
       .then(({ items }) => {
@@ -144,6 +155,7 @@ export default {
       })
       .catch(e => console.error(e));
 
+    // Contentful fetch photography
     const photog = client
       .getEntries({ content_type: 'photography', order: '-fields.order' })
       .then(({ items }) => {
@@ -155,12 +167,18 @@ export default {
       })
       .catch(e => console.error(e));
 
-    return Promise.all([proj, writing, photog])
-      .then(([projects, posts, photography]) => {
+    // Github fetch commits
+    const github = fetch('https://serverless.shahzeb001.now.sh/api/git')
+      .then(raw => raw.json())
+      .catch(e => console.error(e));
+
+    return Promise.all([proj, writing, photog, github])
+      .then(([projects, posts, photography, github]) => {
         return {
           projects: projects.projects,
           posts: posts.posts,
-          photography: photography.photography
+          photography: photography.photography,
+          github
         };
       })
       .catch(e => console.error(e));
